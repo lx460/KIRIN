@@ -16,6 +16,16 @@ function ProgressBar(props) {
 
 function ChallengeCard(props) {
   const [hover, setHover] = useState(false);
+  const [remainDay, setRemainDay] = useState(0);
+  useEffect(() => {
+    if (props.item && props.item.endDate) {
+      const today = new Date().getTime();
+      const leftDay = new Date(props.item.endDate).getTime();
+      const diffDate = leftDay - today;
+      const dDay = Math.abs(diffDate / (1000 * 60 * 60 * 24));
+      setRemainDay(dDay.toFixed());
+    }
+  }, []);
   return (
     <div
       className={props.styles.cardWrapper}
@@ -27,12 +37,14 @@ function ChallengeCard(props) {
         <div className={props.styles.infoBox}>
           <div className={props.styles.infoTop}>
             <span className={props.styles.infoText}>{props.item.title}</span>
-            <span className={props.styles.infoText}>D-21</span>
+            <span className={props.styles.infoText}>D-{remainDay}</span>
           </div>
           <ProgressBar styles={props.styles} width={134} percent={0.7}></ProgressBar>
           <div className={props.styles.infoBot}>
-            <span className={props.styles.infoText}>251명</span>
-            <span className={props.styles.infoText}>70%</span>
+            <span className={props.styles.infoText}>{props.item.currentNum}명</span>
+            <span className={props.styles.infoText}>
+              {props.item.currentNum / props.item.targetNum}%
+            </span>
           </div>
         </div>
       </div>

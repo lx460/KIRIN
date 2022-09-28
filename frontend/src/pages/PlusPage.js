@@ -409,8 +409,7 @@ function PlusPage() {
             </div>
             <div
               style={{
-                display: 'flex',
-                flex: 1,
+                height: 20,
               }}
             ></div>
           </>
@@ -477,8 +476,7 @@ function PlusPage() {
             </div>
             <div
               style={{
-                display: 'flex',
-                flex: 1,
+                height: 20,
               }}
             ></div>
           </>

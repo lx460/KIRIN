@@ -6,7 +6,7 @@ function ChallengeList(props) {
       <div>
         {props.data
           ? props.data.map((item, index) => (
-              <ChallengeCard styles={props.styles} item={item} index={index} key={index} />
+              <ChallengeCard styles={props.styles} item={item} index={index} key={item.id} />
             ))
           : ''}
       </div>
