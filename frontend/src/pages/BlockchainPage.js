@@ -3,6 +3,7 @@ import Web3 from 'web3';
 import { Pagination } from '@mui/material';
 import styles from './BlockchainPage.module.css';
 import { BiArrowBack } from 'react-icons/bi';
+import Header from '../components/common/Header';
 
 // timestamp 포맷을 사람이 읽을 수 있는 형태로 변환한다.
 function timeSince(date) {
@@ -119,13 +120,7 @@ function BlockchainPage() {
 
   return (
     <div style={{ paddingBottom: 55 }}>
-      <div className={styles.topBox}>
-        <a>
-          <BiArrowBack className={styles.back}></BiArrowBack>
-        </a>
-        <div className={styles.pageTitle}>블록 정보</div>
-        <div style={{ width: 25 }}></div>
-      </div>
+      <Header title='블록 정보'></Header>
       <table className={styles.table}>
         <colgroup>
           <col width='18%' />

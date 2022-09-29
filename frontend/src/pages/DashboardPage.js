@@ -3,6 +3,7 @@ import Web3 from 'web3';
 import styles from './DashboardPage.module.css';
 import { useNavigate } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
+import Header from '../components/common/Header';
 
 function DashboardPage() {
   const navigate = useNavigate();
@@ -38,13 +39,7 @@ function DashboardPage() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.topBox}>
-        <a>
-          <BiArrowBack className={styles.back}></BiArrowBack>
-        </a>
-        <div className={styles.pageTitle}>블록체인 정보</div>
-        <div style={{ width: 25 }}></div>
-      </div>
+      <Header title='블록체인 정보'></Header>
       <div className={styles.infoBox}>
         <div className={styles.infoName}>기린 토큰</div>
         <div className={styles.infoName}>CHAINID : {chainId}</div>

@@ -21,6 +21,7 @@ import UseAxios from '../../utils/UseAxios';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
 import Context from '../../utils/Context';
+import Header from '../../components/common/Header';
 
 const theme = createTheme({
   palette: {
@@ -98,30 +99,22 @@ function ChangePasswordPage() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={styles.topBox}>
-        <a href="/mypage/setting">
-          <BiArrowBack className={styles.back}></BiArrowBack>
-        </a>
-        <div className={styles.pageTitle}>비밀번호 변경</div>
-        <div className={styles.fakeSetting}>
-          <AiFillSetting className={styles.fakeSetting}></AiFillSetting>
-        </div>
-      </div>
-      <Container component="main" maxWidth="sm">
+      <Header title='비밀번호 변경'></Header>
+      <Container component='main' maxWidth='sm'>
         <form>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Typography sx={{ ml: 1, mb: 0.5 }}>현재 비밀번호*</Typography>
               <TextField
-                variant="outlined"
+                variant='outlined'
                 required
                 fullWidth
-                type="password"
-                id="password"
-                name="password"
-                placeholder="현재 비밀번호"
+                type='password'
+                id='password'
+                name='password'
+                placeholder='현재 비밀번호'
                 onChange={onChangePassword}
-                size="small"
+                size='small'
                 value={password}
               />
             </Grid>
@@ -129,14 +122,14 @@ function ChangePasswordPage() {
             <Grid item xs={12}>
               <Typography sx={{ ml: 1, mt: 1.5, mb: 0.5 }}>새 비밀번호*</Typography>
               <TextField
-                variant="outlined"
+                variant='outlined'
                 required
                 fullWidth
-                type="password"
-                id="newPassword"
-                name="newPassword"
-                placeholder="새 비밀번호 입력"
-                size="small"
+                type='password'
+                id='newPassword'
+                name='newPassword'
+                placeholder='새 비밀번호 입력'
+                size='small'
                 onChange={onChangeNewPassword}
                 error={newPasswordValidation()}
                 helperText={
@@ -150,13 +143,13 @@ function ChangePasswordPage() {
             <Grid item xs={12}>
               <TextField
                 required
-                variant="outlined"
+                variant='outlined'
                 fullWidth
-                type="password"
-                id="newPasswordCheck"
-                name="newPasswordCheck"
-                placeholder="새 비밀번호 확인"
-                size="small"
+                type='password'
+                id='newPasswordCheck'
+                name='newPasswordCheck'
+                placeholder='새 비밀번호 확인'
+                size='small'
                 onChange={onChangeNewPasswordCheck}
                 error={newPasswordCheckValidation()}
                 helperText={newPasswordCheckValidation() ? '비밀번호가 일치하지 않습니다' : ''}
@@ -167,12 +160,12 @@ function ChangePasswordPage() {
 
           <div>
             <Button
-              type="submit"
+              type='submit'
               fullWidth
-              variant="contained"
+              variant='contained'
               sx={{ mt: 5 }}
-              size="large"
-              color="primary"
+              size='large'
+              color='primary'
               onClick={onSubmit}
             >
               비밀번호 변경

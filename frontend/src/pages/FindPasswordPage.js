@@ -18,6 +18,7 @@ import FindPasswordTop from '../components/sign/FindPasswordTop';
 import styles from './settings/SettingsPage.module.css';
 import UseAxios from '../utils/UseAxios';
 import swal from 'sweetalert';
+import Header from '../components/common/Header';
 
 const theme = createTheme({
   palette: {
@@ -61,12 +62,12 @@ function FindPasswordPage() {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <FindPasswordTop styles={styles}></FindPasswordTop>
+        <Header title={'비밀번호 찾기'}> </Header>
         <img
           src={require('../assets/img/lock.png')}
-          alt=""
-          width="100"
-          height="100"
+          alt=''
+          width='100'
+          height='100'
           style={{ display: 'block', margin: 'auto' }}
         ></img>
 
@@ -79,11 +80,11 @@ function FindPasswordPage() {
             required
             autoFocus
             fullWidth
-            type="email"
-            id="email"
-            name="email"
-            placeholder="이메일"
-            size="small"
+            type='email'
+            id='email'
+            name='email'
+            placeholder='이메일'
+            size='small'
             onChange={onChangeEmail}
           />
         </Grid>
@@ -95,21 +96,21 @@ function FindPasswordPage() {
             value={name}
             required
             fullWidth
-            type="name"
-            id="name"
-            name="name"
-            placeholder="이름"
-            size="small"
+            type='name'
+            id='name'
+            name='name'
+            placeholder='이름'
+            size='small'
             onChange={onChangeName}
           />
         </Grid>
         <Button
-          type="submit"
+          type='submit'
           fullWidth
-          variant="contained"
+          variant='contained'
           sx={{ mt: 3, mb: 5 }}
-          color="primary"
-          size="large"
+          color='primary'
+          size='large'
           // onClick={onSubmit}
         >
           다음

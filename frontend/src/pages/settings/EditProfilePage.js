@@ -20,6 +20,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import UseAxios from '../../utils/UseAxios';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../components/common/Header';
 
 const theme = createTheme({
   palette: {
@@ -131,17 +132,9 @@ function EditProfilePage({ parentCallback }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={styles.topBox}>
-        <a href="/mypage/setting">
-          <BiArrowBack className={styles.back}></BiArrowBack>
-        </a>
-        <div className={styles.pageTitle}>프로필 편집</div>
-        <div className={styles.fakeSetting}>
-          <AiFillSetting></AiFillSetting>
-        </div>
-      </div>
+      <Header title='프로필 편집'></Header>
 
-      <Container component="main" maxWidth="sm">
+      <Container component='main' maxWidth='sm'>
         <Box
           sx={{
             display: 'flex',
@@ -165,10 +158,10 @@ function EditProfilePage({ parentCallback }) {
           ></Avatar>
           <form>
             <input
-              type="file"
+              type='file'
               style={{ display: 'none' }}
-              accept="image/jpg,impge/png,image/jpeg"
-              name="profile_img"
+              accept='image/jpg,impge/png,image/jpeg'
+              name='profile_img'
               onChange={onChange}
               ref={fileInput}
             ></input>
@@ -180,11 +173,11 @@ function EditProfilePage({ parentCallback }) {
                 <TextField
                   required
                   fullWidth
-                  type="email"
-                  id="email"
-                  name="email"
+                  type='email'
+                  id='email'
+                  name='email'
                   placeholder={user.email}
-                  size="small"
+                  size='small'
                   disabled
                 ></TextField>
               </Grid>
@@ -194,26 +187,26 @@ function EditProfilePage({ parentCallback }) {
                 <TextField
                   required
                   fullWidth
-                  id="name"
-                  name="name"
+                  id='name'
+                  name='name'
                   placeholder={user.name}
-                  size="small"
+                  size='small'
                   disabled
                 />
               </Grid>
               <Grid item xs={9} sm={9}>
                 <Typography sx={{ ml: 1, mb: 0.5, mt: 1 }}>닉네임*</Typography>
                 <TextField
-                  variant="outlined"
+                  variant='outlined'
                   required
                   fullWidth
-                  id="nickname"
+                  id='nickname'
                   onChange={onChangeNickname}
                   value={nickname}
                   error={nicknameValidation()}
                   helperText={nicknameValidation() ? '닉네임은 두글자 이상이여야 합니다' : ''}
                   placeholder={user.nickname}
-                  size="small"
+                  size='small'
                 />
               </Grid>
               <Grid item xs={3} sm={3}>
@@ -221,10 +214,10 @@ function EditProfilePage({ parentCallback }) {
                   닉네임*
                 </Typography>
                 <Button
-                  type="button"
+                  type='button'
                   fullWidth
-                  variant="contained"
-                  color="primary"
+                  variant='contained'
+                  color='primary'
                   onClick={nicknameDup}
                   value={nickname}
                   size={width < 600 ? 'small' : 'large'}
@@ -235,10 +228,10 @@ function EditProfilePage({ parentCallback }) {
               </Grid>
             </Grid>
             <Button
-              type="submit"
+              type='submit'
               fullWidth
-              variant="contained"
-              color="primary"
+              variant='contained'
+              color='primary'
               sx={{ py: 1, mt: 5 }}
               onClick={onSubmit}
               size={width < 600 ? 'small' : 'large'}

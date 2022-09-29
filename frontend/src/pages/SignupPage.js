@@ -20,6 +20,7 @@ import SignupTop from '../components/sign/SignupTop';
 import styles from './SignupPage.module.css';
 import UseAxios from '../utils/UseAxios';
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/common/Header';
 
 const theme = createTheme({
   palette: {
@@ -219,7 +220,7 @@ function SignupPage({ parentCallback }) {
   /*랜더링 */
   return (
     <ThemeProvider theme={theme}>
-      <SignupTop styles={styles}></SignupTop>
+      <Header title='회원가입'></Header>
       <Container component='main' maxWidth='sm'>
         <Box
           sx={{
