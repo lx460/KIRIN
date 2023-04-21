@@ -27,7 +27,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# yarn berry
+# yarn berry 설정
 .yarn/*
 .yarn/cache
 .yarn/patches
